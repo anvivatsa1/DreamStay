@@ -1,0 +1,129 @@
+/* -----------------------------------
+   DreamStay - index.css (FINAL FIX)
+   Fix: white text on login inputs
+   + perfect centering + full-bleed background
+------------------------------------ */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #213547;
+  background-color: #f7fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: #4f46e5;
+  text-decoration: none;
+}
+a:hover {
+  color: #3730a3;
+}
+
+/* Ensure the app fills screen */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7fafc;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Let background gradients fill the entire width */
+#root {
+  width: 100%;
+  max-width: none;
+  background: transparent;
+}
+
+/* Keep content containers centered (used internally) */
+.app-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Headings & text */
+h1, h2, h3, h4, h5, h6, label, p, span, div, input, button {
+  color: #111827; /* ✅ ensures readable dark text on white cards */
+}
+
+p {
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Inputs & labels */
+input, label {
+  color: #111827 !important;
+  background-color: white !important;
+  border-color: #d1d5db !important;
+}
+input::placeholder {
+  color: #9ca3af;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background-color: #4338ca;
+}
+button:focus,
+button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0b0f17;
+  }
+  html, body, #root {
+    background-color: #0b0f17;
+  }
+  button {
+    background-color: #1f2937;
+    color: white;
+  }
+  button:hover {
+    background-color: #374151;
+  }
+}
+
+/* Global box sizing */
+* {
+  box-sizing: border-box;
+}

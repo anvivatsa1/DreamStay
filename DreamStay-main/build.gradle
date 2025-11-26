@@ -1,0 +1,26 @@
+plugins {
+    id 'org.springframework.boot' version '3.2.0' // or your version
+    id 'io.spring.dependency-management' version '1.1.3'
+    id 'java'
+}
+
+group = 'com.hotel'
+version = '1.0.0'
+sourceCompatibility = '22'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('bootRun') {
+    mainClass.set('com.hotel.hotel_backend.HotelBackendApplication')
+}
+
+springBoot {
+    mainClass = 'com.hotel.hotel_backend.HotelBackendApplication'
+}
